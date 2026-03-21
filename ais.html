@@ -57,6 +57,7 @@
             background-color: rgba(164, 224, 111, 0.473);
             text-align: center;
             border-radius: 20px;
+            padding: 90px;
             margin-top: 3%;
             margin-left:3% ;
             margin-right: 3%;
@@ -65,6 +66,7 @@
             margin-top: 0.01px;
             text-align: center;
             font-weight: bold;
+            color: white;
             
         }
         .ip{
@@ -87,6 +89,9 @@
             width: 85%;
             margin: 0 auto;
             
+        }
+        #des{
+            color: white;
         }
 
     </style>
@@ -201,14 +206,17 @@
 
             if(totalScore<=5){
                 document.getElementById("bar").style.backgroundColor = "red";
+                document.getElementById("feedbackSummary").style.backgroundImage = "url(images/l-impact.png)";
                 document.getElementById("des").textContent = "Your current actions have a low impact. Try selecting more sustainable choices to better support clean energy.";
 
             }else if(totalScore<=11){
                 document.getElementById("bar").style.backgroundColor = "orange";
+                document.getElementById("feedbackSummary").style.backgroundImage = "url(images/m-impact.png)";
                 document.getElementById("des").textContent = "You are making a positive difference. Your actions contribute to cleaner energy, but there is still room to improve.";        
             
             }else{
                 document.getElementById("bar").style.backgroundColor = "green";
+                document.getElementById("feedbackSummary").style.backgroundImage = "url(images/h-impact.png)";
                 document.getElementById("des").textContent = "Excellent! Your actions show a strong commitment to clean energy and sustainability. You are making a significant impact.";        
             }
         }
