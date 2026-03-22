@@ -9,7 +9,53 @@
         <title>Document</title>
         <link rel="stylesheet" href="styles.css">
         <style>
-            
+            #programs{
+                width: 80%;
+                margin: 0 auto;
+            }
+            .programsec1,.programsec2{
+                width: 100%;
+                display: flex;
+                background-color: bisque;
+            }
+            .program{
+                width: 45%;
+                height: 300px;
+                text-align: center;
+                margin: 10px 2.5%;
+                background-color: rgba(255,255,255, 0.7);
+                border-radius: 10px;
+            }
+            .program img{
+                width: 100%;
+                height: 60%;
+                object-fit: cover;
+                object-position: center;
+                border-radius: 10px 10px 0 0;
+            }
+            .program h2{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                color: rgba(38, 119, 30, 0.7);
+                font-weight: 500;
+                font-size: 20px;
+                margin: 2px 0px;
+            }
+            .program ul{
+                width: 90%;
+                display: flex;
+                justify-content: center;
+                list-style: none;
+            }
+            .program ul li{
+                width: 40%;
+                padding: 3px;
+                background-color: rgba(6, 39, 69, 0.558);
+                border-radius: 10px;
+            }
+            .program ul li a{
+                text-decoration: none;
+                color: azure;
+            }
         </style>
     </head>
     <body>
@@ -28,6 +74,53 @@
                 <a href="profile.html"><img src="images/USER_PROFILE.png" alt="user profile" id="login"></a>
             </nav>
         </header>
+
+        <hr>
+
+        <main>
+            <div id="programs">
+                <section class="programsec1">
+                    <div class="program">
+                        <img src="images/program1.jpg" alt="solar">
+                        <h2>Solar Energy Awareness Workshop</h2>
+                        <h2>Time Duration : 12hours</h2>
+                        <ul>
+                            <li><a href="#">More-Details</a></li>
+                            <li><a href="#">Join Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="program">
+                        <img src="images/program2.jpg" alt="enegy-saving">
+                        <h2>Energy Saving Challenge</h2>
+                        <h2>Time Duration : 16hours</h2>
+                        <ul>
+                            <li><a href="#">More-Details</a></li>
+                            <li><a href="#">Join Now</a></li>
+                        </ul>
+                    </div>
+                </section>
+                <section class="programsec2">
+                    <div class="program">
+                        <img src="images/program3.png" alt="transport">
+                        <h2>Green Transport Campaign</h2>
+                        <h2>Time Duration : 4hours</h2>
+                        <ul>
+                            <li><a href="#">More-Details</a></li>
+                            <li><a href="#">Join Now</a></li>
+                        </ul>
+                    </div>
+                    <div class="program">
+                        <img src="images/program4.jpg" alt="smart-energyusage">
+                        <h2>Smart Energy Usage Program</h2>
+                        <h2>Time Duration : 5hours</h2>
+                        <ul>
+                            <li><a href="#">More-Details</a></li>
+                            <li><a href="#">Join Now</a></li>
+                        </ul>
+                    </div>
+                </section>
+            </div>
+        </main>
 
         <hr>
     
