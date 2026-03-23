@@ -24,7 +24,7 @@ hr{
     border-radius: 100%;
     width: 50px;
     height: 50px;
-    margin-right: 5px;       
+    margin-right: 5px;
 }
 
 nav{
@@ -76,11 +76,6 @@ footer a:hover{
     text-decoration:underline;
 }
 
-/*Active Class*/
-
-.active{
-    color: rgb(159, 68, 68);
-}
 
 /*CARD DESIGN*/
 
