@@ -50,7 +50,7 @@ nav a{
     padding:15px 20px;
     color:rgba(24, 118, 24, 0.871);
     text-decoration:none;
-    font-weight:600;
+    font-weight:700;
     border-radius: 20px;
 }
 
@@ -74,6 +74,12 @@ footer a {
 
 footer a:hover{
     text-decoration:underline;
+}
+
+/*Active Class*/
+
+.active{
+    color: rgb(159, 68, 68);
 }
 
 /*CARD DESIGN*/
