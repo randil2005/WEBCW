@@ -76,6 +76,12 @@ footer a:hover{
     text-decoration:underline;
 }
 
+/*Active Class*/
+
+.active{
+    background-color: rgba(76, 222, 178, 0.73);
+    color: white;
+}
 
 /*CARD DESIGN*/
 
