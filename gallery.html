@@ -13,7 +13,23 @@
                 text-align:center;
                 color:#2e7d32;
             }
+            .gallery img{
+                width: 100%;
+                padding: 0;
+                display: inline-block;
+                border-radius: 10px;
+                cursor: pointer;
+                transition: transform 0.3s;
+    
+            }
             
+            .modal-content {
+                background: white;
+                padding: 20px;
+                border-radius: 10px;
+                max-width: 500px;
+                text-align: center;
+            }
         </style>
     </head>
 
@@ -40,17 +56,17 @@
 
         <div class="gallery">
 
-            <img src="" alt="Solar Panels" onclick="openModal('Solar energy is one of the most sustainable energy sources.')">
+            <img src="images/solar.jpg" alt="Solar Panels" onclick="openModal('Solar energy uses sunlight to generate electricity using solar panels. It is renewable, reduces electricity bills, and lowers carbon emissions.')">
 
-            <img src="" alt="Wind Turbines" onclick="openModal('Wind energy generates electricity without pollution.')">
+            <img src="images/wind.jpg" alt="Wind Turbines" onclick="openModal('Wind turbines convert wind into electricity. It is a clean and renewable source that helps reduce reliance on fossil fuels.')">
 
-            <img src="" alt="Hydropower Plant" onclick="openModal('Hydropower uses water to produce electricity.')">
+            <img src="images/hydro.jpg" alt="Hydropower Plant" onclick="openModal('Hydropower generates electricity using flowing water. It is one of the oldest and most reliable renewable energy sources.')">
 
-            <img src="" alt="Energy Saving" onclick="openModal('Saving energy helps reduce carbon emissions.')">
+            <img src="images/led.jpg" alt="Energy Efficiency" onclick="openModal('Energy efficiency means using less energy for the same tasks. Simple actions like switching off lights help reduce environmental impact.')">
 
-            <img src="" alt="Biomss Energy" onclick="openModal('Biomass energy comes from organic materials like plants, wood, and animal waste.')">
+            <img src="images/wood.jpg" alt="Biomss Energy" onclick="openModal('Biomass energy is produced from organic materials like plants and waste. It helps reduce landfill waste and produces renewable energy.')">
 
-            <img src="" alt="Electric Vehicles" onclick="openModal('Electric vehicles are cars that run on electricity instead of petrol or diesel.')">
+            <img src="images/charge.jpg" alt="Electric Vehicles" onclick="openModal('Electric vehicles run on electricity instead of fuel. They reduce air pollution and greenhouse gas emissions.')">
 
         </div>
     </main>
@@ -60,27 +76,25 @@
                     <button onclick="closeModal()">close</button>
                 </div>
             </div>
-
-            <footer>
-                <p>Student 1 | Page Editor | Validation</p>
-            </footer>
             
             <script>
                 //JAVASCRIPT
-                function openModel (text){
+                function openModal (text){
                     document.getElementById("modalText").innerText = text;
                     document.getElementById("modal").style.display="flex";
 
                 }
                 function closeModal(){
-                    document.getElementById("modal").style.dispaly="none";
+                    document.getElementById("modal").style.display="none";
 
                 }
                 
             </script>
 
+        <footer>
+            <p><a href="#">page editor</a></p>
+            <p><a href="#">Validation</a></p>
+        </footer>
 
-
-    
     </body>
 </html>
