@@ -45,13 +45,10 @@ nav ul{
     justify-content: right;
 }
 
-nav ul li{
-    gap: 5px;
-}
-
 nav a{
     display:block;
     padding:15px 20px;
+    margin: 0 5px;
     color:rgba(24, 118, 24, 0.871);
     text-decoration:none;
     font-weight:700;
