@@ -27,12 +27,26 @@
                 font-weight: bold;
             }
 
+            label{
+                display: flex;
+                width: 100%;
+            }
+
             input, textarea, select {
                 width: 100%;
-                padding: 8px;
-                margin: 5px 0 10px;
-                border-radius: 5px;
+                margin: 5px 0 15px;
+                padding: 5px;
+                box-sizing: border-box;
+                border-radius: 10px;
                 border: 1px solid #ccc;
+            }
+
+            textarea{
+                resize: vertical;
+            }
+
+            #counter{
+                margin-top: 0;
             }
 
             button {
@@ -122,13 +136,14 @@
             </fieldset>
 
             <button type="submit">Submit</button>
+            <button type="reset">Reset</button>
 
             <p id="sMsg" class="success"></p>
 
         </form>
         <script>
 
-            // Character Counter
+            //--->Character Counter
             let message = document.getElementById("message");
             let counter = document.getElementById("counter");
 
@@ -137,8 +152,8 @@
                 counter.textContent = remaining + " characters remaining";
             });
 
-            // Form Validation
-            document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+            //--->Form Validation
+            document.getElementById("feedback").addEventListener("submit", function(e) {
 
                 e.preventDefault();
 
@@ -147,24 +162,24 @@
 
                 let valid = true;
 
-                // Clear previous errors
+                //--->Clear previous errors
                 document.getElementById("nameError").textContent = "";
                 document.getElementById("emailError").textContent = "";
                 document.getElementById("successMsg").textContent = "";
 
-                // Name validation
+                //--->Name validation
                 if (name === "") {
                     document.getElementById("nameError").textContent = "Name is required";
                     valid = false;
                 }
 
-                // Email validation
+                //--->Email validation
                 if (email === "" || !email.includes("@")) {
                     document.getElementById("emailError").textContent = "Enter a valid email";
                     valid = false;
                 }
 
-                // Success message
+                //--->Success message
                 if (valid) {
                     document.getElementById("sMsg").textContent = "Thank you! Your feedback has been submitted.";
                 }
