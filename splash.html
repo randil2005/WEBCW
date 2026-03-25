@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="4; url=home.html">
     <title>GoGreen</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,8 +19,8 @@
             text-align:center;
             color:#2BA62F;
             font-family: "Poppins";
-            margin: 20px;
-            padding: 50px;
+            margin: 5px;
+            padding: 20px;
         }
         
         h1{
@@ -31,6 +32,7 @@
         }
         h2{
             color: #4085aa;
+            
         }
 
         .loader{
@@ -43,7 +45,7 @@
             transition: transform 1s linear;
         }
 
-        button{
+        #skip{
             padding:10px 20px;
             font-size:16px;
             margin-top:20px;
@@ -53,18 +55,29 @@
             color: white;
             font-weight: 650;
         }
+        #skip:hover {
+            background-color: #307c4da2;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #splashlogo{
+            width: 20%;
+            height: 20%;
+            margin: 0px;
+            padding: 0;
+            align-items: center;
+        }
         
     </style>
 </head>
 
 <body>
 
-    <div class="overlay">
-
     <h1>Affordable & Clean Energy</h1>
     <h2>for the future</h2>
 
     <h3>Promoting clean and affordable energy solutions for a sustainable and better future. </h3><br>
+    <img src="images/logo.png" alt="GoGreen logo" id="splashlogo">
 
     <h3>A project by:</h3>
 
@@ -76,7 +89,6 @@
 
     <button id="skip">Skip Intro</button>
 
-    </div>
 
     <script>
 
