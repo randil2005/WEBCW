@@ -6,7 +6,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-        <title>Document</title>
+        <title>GoGreen</title>
         <link rel="stylesheet" href="styles.css">
         <style>
             h1 {
@@ -16,6 +16,10 @@
             h3 {
                 padding: 0 20px;
                 text-align: center;
+                color: #353E43;
+            }
+            p {
+                padding: 0 20px 0 20px ;
             }
             button {
                 background-color: #2C9452;
@@ -54,13 +58,14 @@
                 border-radius: 20px;
                 overflow: hidden;
             }
-            .progress-bar {
-                height: 20px;
+            #progress-bar {
+                height: 24px;
                 width: 0%;
                 background: #2C9452;
                 text-align: center;
                 color: white;
-                font-size: 12px;
+                font-size: 16px;
+                padding: 4px 0;
             }
         </style>
     </head>
@@ -87,7 +92,7 @@
             <h1>USER PROFILE</h1>
             <section>
                 <center>
-                    <button id="create">CREATE</button>
+                    <button onclick="createUser()" id="user_button">CREATE</button>
                 </center>
             </section>
 
@@ -95,57 +100,361 @@
             
             <section class="outline">
                 <section class="sectionCard">
-                    <h3>Personal Information</h3>
+                    <h3>PERSONAL INFORMATION</h3>
+                    <span id="personal"></span>
                     <center>
-                        <button id="start_personal">START</button>
+                        <span id="personal_buttons">
+                            <button onclick="personal()">START</button>
+                        </span>
                     </center>
                 </section>
 
                 <section class="spacing"></section>
 
                 <section class="sectionCard">
-                    <h3>Contact Details</h3>
+                    <h3>CONTACT DETAILS</h3>
+                    <span id="contact"></span>
                     <center>
-                        <button id="start_contact">START</button>
+                        <span id="contact_buttons">
+                            <button onclick="contact()">START</button>
+                        </span>
                     </center>
                 </section>
             </section>
 
             <section class="outline">
                 <section class="sectionCard">
-                    <h3>Interests</h3>
+                    <h3>INTERESTS</h3>
+                    <span id="interests"></span>
                     <center>
-                        <button id="start_interests">START</button>
+                        <span id="interest_buttons">
+                            <button onclick="interests()">START</button>
+                        </span>
                     </center>
                 </section>
 
                 <section class="spacing"></section>
 
                 <section class="sectionCard">
-                    <h3>Goals and Targets</h3>
+                    <h3>GOALS & TARGETS</h3>
+                    <span id="goals"></span>
                     <center>
-                        <button id="start_goals">START</button>
+                        <span id="goals_buttons">
+                            <button onclick="goals()">START</button>
+                        </span>
                     </center>
                 </section>
             </section>
             
             <section class="progress-container">
-                <section class="progress-bar"></section>
+                <section id="progress-bar">0.00%</section>
             </section>
         </main>
 
+        <br>
         <hr>
         <footer>
             <p><a href="#">page editor</a></p>
             <p><a href="#">Validation</a></p>
         </footer>
-    
+        
+        <script>
+            let name ;
+            let dob ;
+            let username ;
+
+            let mobile ;
+            let email ;
+            let address ;
+
+            let aspects ;
+            let activities ;
+            let practice ;
+
+            let public_changes ;
+            let personal_goals ;
+            let measurable_targets ;
+
+            let progress = 0 ;
+
+            function createUser() {
+                personal() ;
+                contact() ;
+                interests() ;
+                goals() ;
+            }
+
+            function personal() {
+                if (!name) {
+                    name = prompt("Full Name :") ;
+                    progress += 1 ;
+                    if (name == null || name == "") {
+                        name = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!dob) {
+                    dob = prompt("Date of Birth (DD.MM.YYYY) :") ;
+                    progress += 1 ;
+                    if (dob == null || dob == "") {
+                        dob = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!username) {
+                    username = prompt("Username :") ;
+                    progress += 1 ;
+                    if (username == null || username == "") {
+                        username = "" ;
+                        progress -= 1 ;
+                    }
+                }
+
+                document.getElementById("personal").innerHTML = 
+                `<p><strong>Full Name :</strong> ${name}</p>
+                <p><strong>Date of Birth :</strong> ${dob}</p>
+                <p><strong>Username :</strong> ${username}</p>` ;
+
+                if (name && dob && username) {
+                    document.getElementById("personal_buttons").innerHTML = 
+                    `<button onclick="resetPersonal()">RESET</button>` ;
+                } else {
+                    document.getElementById("personal_buttons").innerHTML = 
+                    `<button onclick="personal()">CONTINUE</button>
+                    <button onclick="resetPersonal()">RESET</button>` ;
+                }
+
+                updateUI() ;
+            }
+
+            function resetPersonal() {
+                if (name) {
+                    progress -= 1 ;
+                }
+                if (dob) {
+                    progress -= 1 ;
+                }
+                if (username) {
+                    progress -= 1 ;
+                }
+                
+                name = null ;
+                dob = null ;
+                username = null ;
+
+                document.getElementById("personal").innerHTML = "" ;
+                document.getElementById("personal_buttons").innerHTML = 
+                `<button onclick="personal()">START</button>`;
+
+                updateUI() ;
+            }
+
+            function contact() {
+                if (!mobile) {
+                    mobile = prompt("Mobile Number :") ;
+                    progress += 1 ;
+                    if (mobile == null || mobile == "") {
+                        mobile = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!email) {
+                    email = prompt("Email Address :") ;
+                    progress += 1 ;
+                    if (email == null || email == "") {
+                        email = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!address) {
+                    address = prompt("Home Address :")
+                    progress += 1 ;
+                    if (address == null || address == "") {
+                        address = "" ;
+                        progress -= 1 ;
+                    }
+                }
+
+                document.getElementById("contact").innerHTML = 
+                `<p><strong>Mobile Number :</strong> ${mobile}</p>
+                <p><strong>Email :</strong> ${email}</p>
+                <p><strong>Home Address :</strong> ${address}</p>` ;
+
+                if (mobile && email && address) {
+                    document.getElementById("contact_buttons").innerHTML = 
+                    `<button onclick="resetContact()">RESET</button>` ;
+                } else {
+                    document.getElementById("contact_buttons").innerHTML = 
+                    `<button onclick="contact()">CONTINUE</button>
+                    <button onclick="resetContact()">RESET</button>` ;
+                }
+
+                updateUI() ;
+            }
+
+            function resetContact() {
+                if (mobile) {
+                    progress -= 1 ;
+                }
+                if (email) {
+                    progress -= 1 ;
+                }
+                if (address) {
+                    progress -= 1 ;
+                }
+                
+                mobile = null ;
+                email = null ;
+                address = null ;
+
+                document.getElementById("contact").innerHTML = "" ;
+                document.getElementById("contact_buttons").innerHTML = 
+                `<button onclick="contact()">START</button>`;
+
+                updateUI() ;
+            }
+
+            function interests() {
+                if (!aspects) {
+                    aspects = prompt("What aspects of clean and affordable energy interest you the most? (e.g. : solar power, wind energy, energy conservation, sustainable technology)") ;
+                    progress += 1 ;
+                    if (aspects == null || aspects == "") {
+                        aspects = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!activities) {
+                    activities = prompt("Have you participated in or followed any activities, projects, or initiatives related to renewable energy? If yes, describe them :") ;
+                    progress += 1 ;
+                    if (activities == null || activities == "") {
+                        activities = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!practice) {
+                    practice = prompt("How do you currently practice or support energy conservation in your daily life?") ;
+                    progress += 1 ;
+                    if (practice == null || practice == "") {
+                        practice = "" ;
+                        progress -= 1 ;
+                    }
+                }
+
+                document.getElementById("interests").innerHTML = 
+                `<p><strong>Interesed Aspects :</strong> ${aspects}</p>
+                <p><strong>Engaged Activities :</strong> ${activities}</p>
+                <p><strong>Current Practices :</strong> ${practice}</p>` ;
+
+                if (aspects && activities && practice) {
+                    document.getElementById("interest_buttons").innerHTML = 
+                    `<button onclick="resetInterests()">RESET</button>` ;
+                } else {
+                    document.getElementById("interest_buttons").innerHTML = 
+                    `<button onclick="interests()">CONTINUE</button>
+                    <button onclick="resetInterests()">RESET</button>` ;
+                }
+
+                updateUI() ;
+            }
+
+            function resetInterests() {
+                if (aspects) {
+                    progress -= 1 ;
+                }
+                if (activities) {
+                    progress -= 1 ;
+                }
+                if (practice) {
+                    progress -= 1 ;
+                }
+                
+                aspects = null ;
+                activities = null ;
+                practice = null ;
+
+                document.getElementById("interests").innerHTML = "" ;
+                document.getElementById("interest_buttons").innerHTML = 
+                `<button onclick="interests()">START</button>`;
+
+                updateUI() ;
+            }
+
+            function goals() {
+                if (!public_changes) {
+                    public_changes = prompt("What specific changes would you like to see in your community or country regarding access to clean and affordable energy?") ;
+                    progress += 1 ;
+                    if (public_changes == null || public_changes == "") {
+                        public_changes = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!personal_goals) {
+                    personal_goals = prompt("Do you have any personal or group goals related to promoting renewable energy or reducing energy consumption? Please explain.") ;
+                    progress += 1 ;
+                    if (personal_goals == null || personal_goals == "") {
+                        personal_goals = "" ;
+                        progress -= 1 ;
+                    }
+                }
+                if (!measurable_targets) {
+                    measurable_targets = prompt("What measurable targets would you like to achieve within a set timeframe? (e.g. : reducing electricity usage, adopting solar energy, awareness campaigns)") ;
+                    progress += 1 ;
+                    if (measurable_targets == null || measurable_targets == "") {
+                        measurable_targets = "" ;
+                        progress -= 1 ;
+                    }
+                }
+
+                document.getElementById("goals").innerHTML = 
+                `<p><strong>Changes you'd like to see :</strong> ${public_changes}</p>
+                <p><strong>Personal or Group Goals :</strong> ${personal_goals}</p>
+                <p><strong>Measurable Targets :</strong> ${measurable_targets}</p>` ;
+
+                if (public_changes && personal_goals && measurable_targets) {
+                    document.getElementById("goals_buttons").innerHTML = 
+                    `<button onclick="resetGoals()">RESET</button>` ;
+                } else {
+                    document.getElementById("goals_buttons").innerHTML = 
+                    `<button onclick="goals()">CONTINUE</button>
+                    <button onclick="resetGoals()">RESET</button>` ;
+                }
+
+                updateUI() ;
+            }
+
+            function resetGoals() {
+                if (public_changes) {
+                    progress -= 1 ;
+                }
+                if (personal_goals) {
+                    progress -= 1 ;
+                }
+                if (measurable_targets) {
+                    progress -= 1 ;
+                }
+                
+                public_changes = null ;
+                personal_goals = null ;
+                measurable_targets = null ;
+
+                document.getElementById("goals").innerHTML = "" ;
+                document.getElementById("goals_buttons").innerHTML = 
+                `<button onclick="goals()">START</button>`;
+
+                updateUI() ;
+            }
+
+            function updateUI() {
+                let percentage = (progress / 12) * 100 ;
+                document.getElementById("progress-bar").style.width = percentage.toFixed(2) + "%" ;
+                document.getElementById("progress-bar").innerText = percentage.toFixed(2) + "%" ;
+                
+                if (name || dob || username || mobile || email || address || aspects || activities || practice || public_changes || personal_goals || measurable_targets) {
+                    document.getElementById("user_button").textContent = "CONTINUE" ;
+                } else {
+                    document.getElementById("user_button").textContent = "CREATE" ;
+                }
+            }
+        </script>
     </body>
 </html>
-
-<!--
-<center>
-    <button id="continue_personal">CONTINUE</button>
-    <button id="reset_personal">RESET</button>
-</center>
--->
