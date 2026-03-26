@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="refresh" content="4; url=home.html">
     <title>GoGreen</title>
-
-    <meta http-equiv="refresh" content="4;url = home.html">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -18,58 +18,79 @@
             background-position:center;
             text-align:center;
             color:#2BA62F;
-            font-family: "Poppins";
-            margin: 20px;
-            padding: 50px;
+            margin: 0px;
+            
         }
         
-        h1{
-            font-size: 50px;
+        .sdg-data h1{
+            font-size: 40px;
             font-weight: 700;
+            margin-bottom: 2px;
         }
-        h1,h3{
+        .sdg-data h1,h3{
             color: #377E25;
+            margin-bottom: 2px;
         }
-        h2{
+        .sdg-data h2{
             color: #4085aa;
         }
 
+        .team-data h3{
+            margin: 5px 0px;
+        }
+
         .loader{
-            width:60px;
-            height:60px;
+            width:50px;
+            height:50px;
             border:8px solid #f3f3f3;
             border-top:8px solid #356b51;
             border-radius:50%;
-            margin:auto;
+            margin:0px auto 5px;
             transition: transform 1s linear;
         }
 
-        button{
+        #skip{
             padding:10px 20px;
             font-size:16px;
-            margin-top:20px;
+            margin-top:10px;
             border-radius: 25px;
             border: none;
             background-color: #307c4ddc;
             color: white;
             font-weight: 650;
         }
+        #skip:hover {
+            background-color: #307c4da2;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        #splashlogo {
+            margin: 10px;
+            width: 150px;
+            height: auto;
+        }
         
     </style>
 </head>
 
 <body>
+    <div class="sdg-data">
 
-    <div class="overlay">
+        <h1>Affordable & Clean Energy</h1>
+        <h2>for the future</h2>
 
-    <h1>Affordable & Clean Energy</h1>
-    <h2>for the future</h2>
+        <h3>Promoting clean and affordable energy solutions for a sustainable and better future. </h3><br>
+        <img src="images/logo.png" alt="GoGreen logo" id="splashlogo">
 
-    <h3>Promoting clean and affordable energy solutions for a sustainable and better future. </h3><br>
+    </div>
 
-    <h3>A project by:</h3>
+    <div class="team-data">
 
-    <h3>Thivina Abishek | Damian De Cruz | Danella De Cruz | Randil Shehan</h3><br>
+        <h3>A project by:</h3>
+
+        <h3>Thivina Abishek | Damian De Cruz | Danella De Cruz | Randil Shehan</h3><br>
+
+    </div>
 
     <div class="loader"></div>
 
@@ -77,7 +98,6 @@
 
     <button id="skip">Skip Intro</button>
 
-    </div>
 
     <script>
 
