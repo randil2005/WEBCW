@@ -113,12 +113,9 @@ footer a:hover{
 }
 /*GALLERY*/
 
-.gallery{
-    display:grid;
-    grid-template-columns: repeat(3, 1fr); 
-    gap:15px;
+
     
-}
+
 
 .gallery img:hover{
     transform:scale(1.05);
