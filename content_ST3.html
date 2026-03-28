@@ -19,15 +19,21 @@
             }
             .sidebar h3{
                 margin: 10px auto;
-                color: rgba(0, 123, 255, 0.555);
+                color: #4085aa;
             }
-            .sidebar ul li{
+            .sidebarList li{
                 margin: 5px auto;
-                list-style: none;                
+                list-style: disc;                
+            }
+            .subtopics li{
+                list-style: circle;
             }
             .sidebar a{
                 text-decoration: none;
                 color: black;
+            }
+            .currentTopic{
+                font-weight: bold;
             }
         </style>
     </head>
@@ -50,12 +56,45 @@
         <hr>
         <main id="top">
              <aside class="sidebar">
-                <h3>Contents</h3>
-                <ul>
-                    <li><a href="content_ST1.html">Introduction</a></li>
-                    <li><a href="content_ST2.html">Importance</a></li>
-                    <li><a href="content_ST3.html">Solutions</a></li>
-                    <li><a href="content_ST4.html">Actions</a></li>
+                <h3>Content</h3>
+                <ul class="sidebarList">
+                    <li>
+                        <a href="content_ST1.html">Why Clean Energy Matters Today</a>
+                        <ul class="subtopics">
+                            <li><a href="#">Subtopic1</a></li>
+                            <li><a href="#">Subtopic2</a></li>
+                            <li><a href="#">Subtopic3</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="content_ST2.html">Types of Renewable Energy</a>
+                        <ul class="subtopics">
+                            <li><a href="#intro">Introduction</a></li>
+                            <li><a href="#solar">Solar Energy</a></li>
+                            <li><a href="#wind">Wind Energy</a></li>
+                            <li><a href="#hydro">Hydropower</a></li>
+                            <li><a href="#geo">Geothermal Energy</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="content_ST3.html" class="currentTopic">Sustainable Living & Energy Saving</a>
+                        <ul class="subtopics">
+                            <li><a href="#">Subtopic1</a></li>
+                            <li><a href="#">Subtopic2</a></li>
+                            <li><a href="#">Subtopic3</a></li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="content_ST4.html">The Future of Clean Energy</a>
+                        <ul class="subtopics">
+                            <li><a href="#">Subtopic1</a></li>
+                            <li><a href="#">Subtopic2</a></li>
+                            <li><a href="#">Subtopic3</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </aside>
         </main>
