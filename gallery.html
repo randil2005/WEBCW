@@ -91,6 +91,25 @@
             }
 
             /* Modal content */
+            #modal {
+                display: none; /* hidden by default */
+                position: fixed; /* stays on screen */
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+
+                background: rgba(0, 0, 0, 0.6); /* dark overlay */
+
+                justify-content: center; /* horizontal center */
+                align-items: center;     /* vertical center */
+
+                z-index: 1000;
+            }
+            #modal.active{
+                display:flex;
+            }
+
             #modalBody {
                 background: #fff;
                 max-width: 600px;
@@ -236,7 +255,7 @@
                 <!--added using js later-->
                 <img id="modalImage" src="" alt=""/>
                 <p id="modalDescription"></p>
-            <div>
+            </div>
         </div>
     </main>
     <script>
