@@ -13,6 +13,11 @@
                 text-align: center;
                 color: #2C9452;
             }
+            h2 {
+                padding: 10px;
+                text-align: center;
+                color: #2C9452;
+            }
             h3 {
                 padding: 0 20px;
                 text-align: center;
@@ -100,7 +105,7 @@
 
         <main id="top">
             <h1>USER PROFILE</h1>
-            <section id="status">
+            <section>
                 <center>
                     <button onclick="createUser()" id="user_button">CREATE</button>
                 </center>
@@ -159,9 +164,11 @@
             <section class="progress-container">
                 <section id="progress-bar">0.00%</section>
             </section>
+            <section>
+                <h2 id="status"></h2>
+            </section>
         </main>
 
-        <br>
         <hr>
 
         <button id="backtotop"><a href="#top">Back to top</a></button>
@@ -203,6 +210,28 @@
                 contact() ;
                 interests() ;
                 goals() ;
+
+                if (progress == 12) {
+                    var messageBody = 
+                    `Name : ${name}
+                    D.O.B : ${dob}
+                    Username : ${username}
+                    
+                    Mobile Number : ${mobile}
+                    Email Address : ${email}
+                    Home Address : ${address}
+                    
+                    What aspects of clean and affordable energy interest you the most? : ${aspects}
+                    Have you participated in or followed any activities, projects, or initiatives related to renewable energy? If yes, describe them : ${activities}
+                    How do you currently practice or support energy conservation in your daily life? : ${practice}
+                    
+                    What specific changes would you like to see in your community or country regarding access to clean and affordable energy? : ${public_changes}
+                    Do you have any personal or group goals related to promoting renewable energy or reducing energy consumption? Please explain. : ${personal_goals}
+                    What measurable targets would you like to achieve within a set timeframe? (e.g. : reducing electricity usage, adopting solar energy, awareness campaigns) : ${measurable_targets}`
+
+                    var link = "mailto:damian.20250423@iit.ac.lk?subject=User Created&body=" + encodeURIComponent(messageBody) ;
+                    window.location.href = link ;
+                }
             }
 
             function personal() {
@@ -518,10 +547,17 @@
                 document.getElementById("progress-bar").style.width = percentage.toFixed(2) + "%" ;
                 document.getElementById("progress-bar").innerText = percentage.toFixed(2) + "%" ;
 
-                if (name || dob || username || mobile || email || address || aspects || activities || practice || public_changes || personal_goals || measurable_targets) {
+                if (progress != 0) {
                     document.getElementById("user_button").textContent = "CONTINUE" ;
                 } else {
                     document.getElementById("user_button").textContent = "CREATE" ;
+                }
+
+                if (percentage == 100) {
+                    document.getElementById("status").textContent = "PROFILE COMPLETE" ;
+                    document.getElementById("user_button").textContent = "SUBMIT" ;
+                } else {
+                    document.getElementById("status").textContent = "" ;
                 }
             }
         </script>
