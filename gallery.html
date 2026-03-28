@@ -156,13 +156,14 @@
                 color: black;
             }
             #modalDescription {
-                background-color: rgba(144, 238, 144, 0.325);
+                background-color:rgb(16, 15, 15);
                 padding: 10px 10px;
                 border-radius: 10px;
             }
 
             .control-group {
                 margin: 8px 0;
+                color: black;
             }
 
             .control-group label {
@@ -218,32 +219,36 @@
 
         <div class="gallery-grid">
             <div class="cell">
-                <img src="images/solar.jpg" alt="Solar Panels" onclick="openModal('Solar energy uses sunlight to generate electricity using solar panels. It is renewable, reduces electricity bills, and lowers carbon emissions.')"/>
+                <img src="images/solar.jpg" alt="Solar Panels"
+                data-desc="Solar energy uses sunlight to generate electricity." />
                 <span class="label">Solar Panels</span>
             </div>
 
             <div class="cell">
-                <img src="images/wind.jpg" alt="Wind Turbines" onclick="openModal('Wind turbines convert wind into electricity. It is a clean and renewable source that helps reduce reliance on fossil fuels.')"/>
+                <img src="images/wind.jpg" alt="Wind Turbines"
+                data-desc="Wind turbines convert wind into electricity." />
                 <span class="label">Wind Turbines</span>
             </div>
 
             <div class="cell">
-                <img src="images/hydro.jpg" alt="Hydropower Plant" onclick="openModal('Hydropower generates electricity using flowing water. It is one of the oldest and most reliable renewable energy sources.')"/>
+                <img src="images/hydro.jpg" alt="Hydropower Plant" 
+                data-desc="Hydropower uses flowing water to produce electricity."/>
                 <span class="label">Hydropower Plant</span>
             </div>
 
             <div class="cell">
-                <img src="images/led.jpg" alt="Energy Efficiency" onclick="openModal('Energy efficiency means using less energy for the same tasks. Simple actions like switching off lights help reduce environmental impact.')"/>
+                <img src="images/led.jpg" alt="Energy Efficiency"
+                data-desc=""/>
                 <span class="label">Energy Efficiency</span>
             </div>
 
             <div class="cell">
-                <img src="images/wood.jpg" alt="Biomss Energy" onclick="openModal('Biomass energy is produced from organic materials like plants and waste. It helps reduce landfill waste and produces renewable energy.')"/>
+                <img src="images/wood.jpg" alt="Biomss Energy"/>
                 <span class="label">Biomss Energy</span>
             </div>
 
             <div class="cell">
-                <img src="images/charge.jpg" alt="Electric Vehicles" onclick="openModal('Electric vehicles run on electricity instead of fuel. They reduce air pollution and greenhouse gas emissions.')"/>
+                <img src="images/charge.jpg" alt="Electric Vehicles" />
                 <span class="label">Electric Vehicles</span>
             </div>
 
@@ -278,29 +283,29 @@
 
     const galleryData = [
         {
-            title:"bla bla",
-            discription:
+            title: "Solar Panels",
+            description:
             "Hydropower generates electricity using flowing water. It is one of the oldest and most reliable renewable energy sources.",
         },
         {
-            title:"",
-            discription:"",
+            title:"Wind Turbines",
+            description:"",
         },
         {
             title:"",
-            discription:"",
+            description:"",
         },
         {
             title:"",
-            discription:"",
+            description:"",
         },
         {
             title:"",
-            discription:"",
+            description:"",
         },
         {
             title:"",
-            discription:"",
+            description:"",
         },
     ];
 
@@ -309,13 +314,13 @@
     // OPEN MODAL (simple)
 
     const cells = document.querySelectorAll(".cell");
-    cells.forEach(cell => {
+    cells.forEach((cell,index) => {
         cell.addEventListener("click", () => {
             const img = cell.querySelector("img");
 
             modalImage.src = img.src;
             modalTitle.textContent = img.alt; // use alt as title
-            modalDescription.textContent = img.getAttribute("data-desc"); // custom description
+            modalDescription.textContent = galleryData[index].description;// custom description
 
             modal.classList.add("active");
         });
@@ -384,7 +389,7 @@
 
     // COLOR CHANGE (simplified)
 
-    document.getElementById("colorScheme:black").onchange = function () {
+    document.getElementById("colorScheme").onchange = function () {
 
         if (this.value === "dark") {
             modalBody.style.backgroundColor = "#0e2e04";
