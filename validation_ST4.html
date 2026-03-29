@@ -1,12 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Validator Page Student - provide your student name</title>
+    <title>Validator Page Student - Damian De Cruz</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
+    <link rel="stylesheet" href="css/styles.css">
 
 </head>
 <body>
@@ -14,11 +18,32 @@
     <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
     <header id="top">
-        <h1>Replace this header with your teams' website header</h1>
+        <nav>
+            <div class="headerOutline">
+                <div class="borderlogo">
+                        <a href="home.html"><img src="images/logo.png" alt="GoGreen logo" id="logo"></a>
+                </div>
+
+                <div class="navbar">
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="content.html">Content</a></li>
+                        <li><a href="ais.html">Simulator</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="feedback.html">Feedback</a></li>
+                        <li><a href="team.html">Team</a></li>
+                        <li><a href="sitemap.html">Sitemap</a></li>
+                    </ul>
+                </div>
+                <div class="borderlogo">
+                    <a href="profile.html"><img src="images/USER_PROFILE.png" alt="user profile" id="login"></a>
+                </div>
+            </div>
+        </nav>
     </header>
 
     <section class="stud">
-        <h2>Student name, team name, student role</h2>
+        <h2>Damian De Cruz, team 3, student 4</h2>
     </section>
 
     <div class="container">
@@ -28,32 +53,32 @@
             <!-- Update the content of the following sections with the information that corresponds to the pages you implemented  -->
 
             <section>
-                <h2 id="splashVal">Home Page validation report</h2>
+                <h2 id="profileVal">User Profile Page validation report</h2>
                     <p>Include a short reflection on the validation report for the pages you implemented.</p> 
-                    <img src="validationSnapshots/validation_splash.png">
+                    <img src="validationSnapshots/profile_validation.jpeg">
                                     
                 <h3>Back to Page Editor page</h3>
-                    <p><a href="pageEditor_ST0.html#splash">Include a link back to the corresponding section of the Page Editor.</a></p>
-                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                    <p><a href="pageEditor_ST4.html#profile">Include a link back to the corresponding section of the Page Editor.</a></p>
+                <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the user profile page -->
             </section>
 
             <section>
-                <h2 id="volunteerVal">Gallery Page validation report</h2>
+                <h2 id="sitemapVal">Sitemap Page validation report</h2>
                 <p>Include a short reflection on the validation report for the pages you implemented.</p>
-                    <img src="validationSnapshots/validation_splash.png">
+                    <img src="validationSnapshots/sitemap_validation.jpeg">
                                     
                 <h3>Back to Page Editor page</h3>
-                    <p><a href="pageEditor_ST0.html#volunteer">Include a link back to the corresponding section of the Page Editor.</a></p>
+                    <p><a href="pageEditor_ST4.html#sitemap">Include a link back to the corresponding section of the Page Editor.</a></p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
             </section></a></p>
 
             <section>
                 <h2 id="contentVal">Content Page validation report</h2>
                 <p>Include a short reflection on the validation report for the pages you implemented.</p>
-                    <img src="validationSnapshots/validation_splash.png">
+                    <img src="validationSnapshots/st4-content_validation.jpeg">
                                     
                 <h3>Back to Page Editor page</h3>
-                    <p><a href="pageEditor_ST0.html#content">Include a link back to the corresponding section of the Page Editor.</a></p>
+                    <p><a href="pageEditor_ST4.html#content">Include a link back to the corresponding section of the Page Editor.</a></p>
                 <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
             </section></a></p>
 
@@ -68,30 +93,11 @@
         <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul>
-                        <li><a href="#home">Home page </a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#content">Content</a></li>
-                    </ul>
-                <li>Student 2</li>
-                <ul> 
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
-                </ul>
-                    
-                <li>Student 3</li>
-                    <ul>
-                        <li><a href="#">Feedback</a> </li>
-                        <li><a href="#">Team</a></li>
-                        <li><a href="#">Content</a></li>
-                    </ul>
                 <li>Student 4</li>
                     <ul>
-                        <li><a href="#">User Profile </a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Content</a></li>
+                        <li><a href="#profileVal">User Profile </a></li>
+                        <li><a href="#sitemapVal">Sitemap</a></li>
+                        <li><a href="#contentVal">Content</a></li>
                     </ul>
             </ul>
         </aside>
