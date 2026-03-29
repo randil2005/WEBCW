@@ -194,3 +194,19 @@ footer a:hover{
     justify-content: center;
     padding: 5px;
 }
+
+#backtotop {
+    position: fixed;
+    bottom: 5%;
+    right: 5%;
+    background-color: #2C9452;
+    border: none;
+    padding: 10px;
+    border-radius: 15px;
+}
+#backtotop a {
+    text-decoration: none;
+    font-family: Poppins;
+    font-weight: 600;
+    color: white;
+}

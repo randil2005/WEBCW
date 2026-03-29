@@ -1,329 +1,331 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <title>GoGreen</title>
-    <style>
-        svg {
-            width: 100%;
-            height: auto;
-        }
-        .nodeBox {
-            stroke-width: 1px;
-            stroke: whitesmoke;
-            fill: #2C9452;
-        }
-        .boxText{
-            font-size: 9px;
-            fill: white;
-            text-anchor: middle;
-            dominant-baseline: middle;
-        }
-        .hoverEffect:hover rect {
-            fill: #038031;
-            cursor: pointer;
-            filter: drop-shadow(0 0 5px rgba(4, 152, 58, 0.85));
-            transition: 0.3s ease;
-        }
-        .hoverEffect:hover text , image {
-            cursor: pointer;
-        }
-        .subNodeBox {
-            stroke-width: 1px;
-            stroke: whitesmoke;
-            fill: #565e63;
-        }
-        .subBoxText {
-            font-size: 8px;
-            fill: white;
-            text-anchor: middle;
-            dominant-baseline: middle;
-        }
-        .subHoverEffect:hover rect {
-            fill: #353E43;
-            cursor: pointer;
-            filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
-            transition: 0.3s ease;
-        }
-        .subHoverEffect:hover text , image {
-            cursor: pointer;
-        }
-        .greenpath {
-            stroke: #2C9452;
-            stroke-width: 1px;
-            fill: none;
-        }
-        .greypath{
-            stroke: #565e63;
-            stroke-width: 1px;
-            fill: none;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <nav>
-            <section class="headerOutline">
-                <section class="borderlogo">
-                    <a href="home.html"><img src="images/logo.png" alt="GoGreen logo" id="logo"></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="styles.css">
+        <title>GoGreen</title>
+        <style>
+            svg {
+                width: 100%;
+                height: auto;
+            }
+            .nodeBox {
+                stroke-width: 1px;
+                stroke: whitesmoke;
+                fill: #2C9452;
+            }
+            .boxText{
+                font-size: 9px;
+                fill: white;
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }
+            .hoverEffect:hover rect {
+                fill: #038031;
+                cursor: pointer;
+                filter: drop-shadow(0 0 5px rgba(4, 152, 58, 0.85));
+                transition: 0.3s ease;
+            }
+            .hoverEffect:hover text , image {
+                cursor: pointer;
+            }
+            .subNodeBox {
+                stroke-width: 1px;
+                stroke: whitesmoke;
+                fill: #565e63;
+            }
+            .subBoxText {
+                font-size: 8px;
+                fill: white;
+                text-anchor: middle;
+                dominant-baseline: middle;
+            }
+            .subHoverEffect:hover rect {
+                fill: #353E43;
+                cursor: pointer;
+                filter: drop-shadow(0 0 5px rgba(0,0,0,0.7));
+                transition: 0.3s ease;
+            }
+            .subHoverEffect:hover text , image {
+                cursor: pointer;
+            }
+            .greenpath {
+                stroke: #2C9452;
+                stroke-width: 1px;
+                fill: none;
+            }
+            .greypath{
+                stroke: #565e63;
+                stroke-width: 1px;
+                fill: none;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <section class="headerOutline">
+                    <section class="borderlogo">
+                        <a href="home.html"><img src="images/logo.png" alt="GoGreen logo" id="logo"></a>
+                    </section>
+
+                    <section class="navbar">
+                        <ul>
+                            <li><a href="home.html">Home</a></li>
+                            <li><a href="content.html">Content</a></li>
+                            <li><a href="ais.html">Simulator</a></li>
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="feedback.html">Feedback</a></li>
+                            <li><a href="team.html">Team</a></li>
+                            <li><a href="sitemap.html" class="active">Sitemap</a></li>
+                        </ul>
+                    </section>
+
+                    <section class="borderlogo">
+                        <a href="profile.html"><img src="images/USER_PROFILE.png" alt="user profile" id="login"></a>
+                    </section>
                 </section>
+            </nav>
+        </header>
 
-                <section class="navbar">
-                    <ul>
-                        <li><a href="home.html">Home</a></li>
-                        <li><a href="content.html">Content</a></li>
-                        <li><a href="ais.html">Simulator</a></li>
-                        <li><a href="gallery.html">Gallery</a></li>
-                        <li><a href="feedback.html">Feedback</a></li>
-                        <li><a href="team.html">Team</a></li>
-                        <li><a href="sitemap.html" class="active">Sitemap</a></li>
-                    </ul>
-                </section>
+        <hr>
 
-                <section class="borderlogo">
-                    <a href="profile.html"><img src="images/USER_PROFILE.png" alt="user profile" id="login"></a>
-                </section>
-            </section>
-        </nav>
-    </header>
+        <main id="top">
+            <svg viewbox="0 0 1000 770">
+                <a xlink:href="splash.html" tabindex="0">
+                    <title>Splashscreen</title>            
+                    <g class="hoverEffect" id="SPLASH">
+                        <rect x="460" y="10" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="500" y="70" class="boxText">SPLASH SCREEN</text>
+                        <image href="images/SPLASHSCREEN.png" x="475" y="15" width="50" height="50" />
+                    </g>
+                </a>
 
-    <hr>
+                <a xlink:href="home.html" tabindex="0">
+                    <title>Home</title>
+                    <g class="hoverEffect" id="HOME">
+                        <rect x="460" y="120" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="500" y="180" class="boxText">HOME</text>
+                        <image href="images/HOME.png" x="475" y="125" width="50" height="50" />
+                    </g>
+                </a>
+                
+                <a xlink:href="validation_ST3.html" tabindex="0">
+                    <title>Student 3 validation</title>
+                    <g class="subHoverEffect" id="ST3_VAL">
+                        <rect x="40" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="80" y="320" class="subBoxText">ST_3 VALIDATION</text>
+                        <image href="images/VALIDATION.png" x="55" y="265" width="50" height="50" />
+                    </g>
+                </a>
 
-    <main id="top">
-        <svg viewbox="0 0 1000 770">
-            <a xlink:href="splash.html" tabindex="0">
-                <title>Splashscreen</title>            
-                <g class="hoverEffect" id="SPLASH">
-                    <rect x="460" y="10" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="500" y="70" class="boxText">SPLASH SCREEN</text>
-                    <image href="images/SPLASHSCREEN.png" x="475" y="15" width="50" height="50" />
+                <a xlink:href="pageEditor_ST3.html" tabindex="0">
+                    <title>Student 3 page editor</title>
+                    <g class="subHoverEffect" id="ST3_PE">
+                        <rect x="140" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="180" y="320" class="subBoxText">ST_3 PAGE EDITOR</text>
+                        <image href="images/PAGE_EDITOR.png" x="155" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="validation_ST1.html" tabindex="0">
+                    <title>Student 1 validation</title>
+                    <g class="subHoverEffect" id="ST1_VAL">
+                        <rect x="280" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="320" y="320" class="subBoxText">ST_1 VALIDATION</text>
+                        <image href="images/VALIDATION.png" x="295" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="pageEditor_ST1.html" tabindex="0">
+                    <title>Student 1 page editor</title>
+                    <g class="subHoverEffect" id="ST1_PE">
+                        <rect x="380" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="420" y="320" class="subBoxText">ST_1 PAGE EDITOR</text>
+                        <image href="images/PAGE_EDITOR.png" x="395" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="validation_ST2.html" tabindex="0">
+                    <title>Student 2 validation</title>
+                    <g class="subHoverEffect" id="ST2_VAL">
+                        <rect x="540" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="580" y="320" class="subBoxText">ST_2 VALIDATION</text>
+                        <image href="images/VALIDATION.png" x="555" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="pageEditor_ST2.html" tabindex="0">
+                    <title>Student 2 page editor</title>
+                    <g class="subHoverEffect" id="ST2_PE">
+                        <rect x="640" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="680" y="320" class="subBoxText">ST_2 PAGE EDITOR</text>
+                        <image href="images/PAGE_EDITOR.png" x="655" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="validation_ST4.html" tabindex="0">
+                    <title>Student 4 validation</title>
+                    <g class="subHoverEffect" id="ST4_VAL">
+                        <rect x="780" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="820" y="320" class="subBoxText">ST_4 VALIDATION</text>
+                        <image href="images/VALIDATION.png" x="795" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="pageEditor_ST4.html" tabindex="0">
+                    <title>Student 4 page editor</title>
+                    <g class="subHoverEffect" id="ST4_PE">
+                        <rect x="880" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
+                        <text x="920" y="320" class="subBoxText">ST_4 PAGE EDTIOR</text>
+                        <image href="images/PAGE_EDITOR.png" x="895" y="265" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="team.html" tabindex="0">
+                    <title>Team</title>
+                    <g class="hoverEffect" id="TEAM">
+                        <rect x="40" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="80" y="520" class="boxText">TEAM</text>
+                        <image href="images/TEAM.png" x="55" y="465" width="50" height="50" />
+                    </g>
+                </a>
+                
+                <a xlink:href="feedback.html" tabindex="0">
+                    <title>Feedback</title>
+                    <g class="hoverEffect" id="FEEDBACK">
+                        <rect x="180" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="220" y="520" class="boxText">FEEDBACK</text>
+                        <image href="images/FEEDBACK.png" x="195" y="465" width="50" height="50" />
+                    </g>
+                </a>
+                
+                <a xlink:href="gallery.html" tabindex="0">
+                    <title>Gallery</title>
+                    <g class="hoverEffect" id="GALLERY">
+                        <rect x="320" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="360" y="520" class="boxText">GALLERY</text>
+                        <image href="images/GALLERY.png" x="335" y="465" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="ais.html" tabindex="0">
+                    <title>Artificial Impact Simulator</title>
+                    <g class="hoverEffect" id="AIS">
+                        <rect x="600" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="640" y="520" class="boxText">AIS</text>
+                        <image href="images/AIS.png" x="615" y="465" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="profile.html" tabindex="0">
+                    <title>User Profile</title>
+                    <g class="hoverEffect" id="USER">
+                        <rect x="740" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="780" y="520" class="boxText">USER PROFILE</text>
+                        <image href="images/USER_PROFILE.png" x="755" y="465" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="sitemap.html" tabindex="0">
+                    <title>Sitemap</title>
+                    <g class="hoverEffect" id="SITEMAP">
+                        <rect x="880" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="920" y="520" class="boxText">SITEMAP</text>
+                        <image href="images/SITEMAP.png" x="895" y="465" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="content_ST1.html" tabindex="0">
+                    <title>Content Student 1</title>
+                    <g class="hoverEffect" id="PAGE1">
+                        <rect x="190" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="230" y="740" class="boxText">STUDENT 1</text>
+                        <image href="images/CONTENT_PAGE.png" x="205" y="685" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="content_ST2.html" tabindex="0">
+                    <title>Content Student 2</title>
+                    <g class="hoverEffect" id="PAGE2">
+                        <rect x="370" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="410" y="740" class="boxText">STUDENT 2</text>
+                        <image href="images/CONTENT_PAGE.png" x="385" y="685" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="content_ST3.html" tabindex="0">
+                    <title>Content Student 3</title>
+                    <g class="hoverEffect" id="PAGE3">
+                        <rect x="550" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="590" y="740" class="boxText">STUDENT 3</text>
+                        <image href="images/CONTENT_PAGE.png" x="565" y="685" width="50" height="50" />
+                    </g>
+                </a>
+
+                <a xlink:href="content_ST4.html" tabindex="0">
+                    <title>Content Student 4</title>
+                    <g class="hoverEffect" id="PAGE4">
+                        <rect x="730" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
+                        <text x="770" y="740" class="boxText">STUDENT 4</text>
+                        <image href="images/CONTENT_PAGE.png" x="745" y="685" width="50" height="50" />
+                    </g>
+                </a>
+
+                <!--Paths-->
+                <g class="greypath">
+                    <path d="M 460 160 L 430 160 C 380 160, 320 190, 320 220 L 320 260" /> <!--Home : ST1 validation-->
+                    <path d="M 460 160 L 440 160 C 420 160, 420 190, 420 220 L 420 260" /> <!--Home : ST1 page editor-->
+                    <path d="M 360 460 L 360 430 C 360 380, 320 380, 320 340" /> <!--Gallery : ST1 validation-->
+                    <path d="M 360 460 L 360 430 C 360 380, 420 380, 420 340" /> <!--Gallery : ST1 page editor-->
+
+                    <path d="M 540 50 L 560 50 C 580 50, 580 160, 580 220 L 580 260" /> <!--Splashscreen : ST2 validation-->
+                    <path d="M 540 50 L 570 50 C 620 50, 680 160, 680 220 L 680 260" /> <!--Splashscreen : ST2 page editor-->
+                    <path d="M 640 460 L 640 430 C 640 380, 580 380, 580 340" /> <!--AIS : ST2 validation-->
+                    <path d="M 640 460 L 640 430 C 640 380, 680 380, 680 340" /> <!--AIS : ST2 page editor-->
+
+                    <path d="M 80 460 l 0 -120" /> <!--Team : ST3 validation-->
+                    <path d="M 80 460 L 80 430 C 80 380, 180 380, 180 340" /> <!--Team : ST3 page editor-->
+                    <path d="M 220 460 L 220 430 C 220 380, 80 380, 80 340" /> <!--Feedback : ST3 validation-->
+                    <path d="M 220 460 L 220 430 C 220 380, 180 380, 180 340" /> <!--Feedback : ST3 page editor-->
+
+                    <path d="M 920 460 l 0 -120" /> <!--Sitemap : ST4 validation-->
+                    <path d="M 920 460 L 920 430 C 920 380, 820 380, 820 340" /> <!--Sitemap : ST4 page editor-->
+                    <path d="M 780 460 L 780 430 C 780 380, 920 380, 920 340" /> <!--User : ST4 validation-->
+                    <path d="M 780 460 L 780 430 C 780 380, 820 380, 820 340" /> <!--User : ST4 page editor-->
                 </g>
-            </a>
+                
+                <g class="greenpath">
+                    <path d="M 500 90 l 0 30" /> <!--Splash : Home-->
 
-            <a xlink:href="home.html" tabindex="0">
-                <title>Home</title>
-                <g class="hoverEffect" id="HOME">
-                    <rect x="460" y="120" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="500" y="180" class="boxText">HOME</text>
-                    <image href="images/HOME.png" x="475" y="125" width="50" height="50" />
+                    <path d="M 500 320 C 460 430, 80 400, 80 460" /> <!--Home : Team-->
+                    <path d="M 500 320 C 480 425, 220 400, 220 460" /> <!--Home : Feedback-->
+                    <path d="M 500 320 C 495 415, 360 400, 360 460" /> <!--Home : Gallery-->
+                    <path d="M 500 200 l 0 340" /> <!--Home : Content-->
+                    <path d="M 500 320 C 505 415, 640 400, 640 460" /> <!--Home : AIS-->
+                    <path d="M 500 320 C 520 425, 780 400, 780 460" /> <!--Home : User Profile-->
+                    <path d="M 500 320 C 540 430, 920 400, 920 460" /> <!--Home : Sitemap-->
+
+                    <path d="M 500 540 C 500 610, 230 620, 230 680" /> <!--Content : Page 1-->
+                    <path d="M 500 540 C 500 600, 410 620, 410 680" /> <!--Content : Page 2-->
+                    <path d="M 500 540 C 500 600, 590 620, 590 680" /> <!--Content : Page 3-->
+                    <path d="M 500 540 C 500 610, 770 620, 770 680" /> <!--Content : Page 4-->
                 </g>
-            </a>
-            
-            <a xlink:href="validation_ST3.html" tabindex="0">
-                <title>Student 3 validation</title>
-                <g class="subHoverEffect" id="ST3_VAL">
-                    <rect x="40" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="80" y="320" class="subBoxText">ST_3 VALIDATION</text>
-                    <image href="images/VALIDATION.png" x="55" y="265" width="50" height="50" />
-                </g>
-            </a>
+                
+            </svg>
+        </main>
 
-            <a xlink:href="pageEditor_ST3.html" tabindex="0">
-                <title>Student 3 page editor</title>
-                <g class="subHoverEffect" id="ST3_PE">
-                    <rect x="140" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="180" y="320" class="subBoxText">ST_3 PAGE EDITOR</text>
-                    <image href="images/PAGE_EDITOR.png" x="155" y="265" width="50" height="50" />
-                </g>
-            </a>
+        <button id="backtotop"><a href="#top">Back to top</a></button>
 
-            <a xlink:href="validation_ST1.html" tabindex="0">
-                <title>Student 1 validation</title>
-                <g class="subHoverEffect" id="ST1_VAL">
-                    <rect x="280" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="320" y="320" class="subBoxText">ST_1 VALIDATION</text>
-                    <image href="images/VALIDATION.png" x="295" y="265" width="50" height="50" />
-                </g>
-            </a>
+        <hr>
 
-            <a xlink:href="pageEditor_ST1.html" tabindex="0">
-                <title>Student 1 page editor</title>
-                <g class="subHoverEffect" id="ST1_PE">
-                    <rect x="380" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="420" y="320" class="subBoxText">ST_1 PAGE EDITOR</text>
-                    <image href="images/PAGE_EDITOR.png" x="395" y="265" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="validation_ST2.html" tabindex="0">
-                <title>Student 2 validation</title>
-                <g class="subHoverEffect" id="ST2_VAL">
-                    <rect x="540" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="580" y="320" class="subBoxText">ST_2 VALIDATION</text>
-                    <image href="images/VALIDATION.png" x="555" y="265" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="pageEditor_ST2.html" tabindex="0">
-                <title>Student 2 page editor</title>
-                <g class="subHoverEffect" id="ST2_PE">
-                    <rect x="640" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="680" y="320" class="subBoxText">ST_2 PAGE EDITOR</text>
-                    <image href="images/PAGE_EDITOR.png" x="655" y="265" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="validation_ST4.html" tabindex="0">
-                <title>Student 4 validation</title>
-                <g class="subHoverEffect" id="ST4_VAL">
-                    <rect x="780" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="820" y="320" class="subBoxText">ST_4 VALIDATION</text>
-                    <image href="images/VALIDATION.png" x="795" y="265" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="pageEditor_ST4.html" tabindex="0">
-                <title>Student 4 page editor</title>
-                <g class="subHoverEffect" id="ST4_PE">
-                    <rect x="880" y="260" rx="10" ry="10" width="80" height="80" class="subNodeBox" />
-                    <text x="920" y="320" class="subBoxText">ST_4 PAGE EDTIOR</text>
-                    <image href="images/PAGE_EDITOR.png" x="895" y="265" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="team.html" tabindex="0">
-                <title>Team</title>
-                <g class="hoverEffect" id="TEAM">
-                    <rect x="40" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="80" y="520" class="boxText">TEAM</text>
-                    <image href="images/TEAM.png" x="55" y="465" width="50" height="50" />
-                </g>
-            </a>
-            
-            <a xlink:href="feedback.html" tabindex="0">
-                <title>Feedback</title>
-                <g class="hoverEffect" id="FEEDBACK">
-                    <rect x="180" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="220" y="520" class="boxText">FEEDBACK</text>
-                    <image href="images/FEEDBACK.png" x="195" y="465" width="50" height="50" />
-                </g>
-            </a>
-            
-            <a xlink:href="gallery.html" tabindex="0">
-                <title>Gallery</title>
-                <g class="hoverEffect" id="GALLERY">
-                    <rect x="320" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="360" y="520" class="boxText">GALLERY</text>
-                    <image href="images/GALLERY.png" x="335" y="465" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="ais.html" tabindex="0">
-                <title>Artificial Impact Simulator</title>
-                <g class="hoverEffect" id="AIS">
-                    <rect x="600" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="640" y="520" class="boxText">AIS</text>
-                    <image href="images/AIS.png" x="615" y="465" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="profile.html" tabindex="0">
-                <title>User Profile</title>
-                <g class="hoverEffect" id="USER">
-                    <rect x="740" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="780" y="520" class="boxText">USER PROFILE</text>
-                    <image href="images/USER_PROFILE.png" x="755" y="465" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="sitemap.html" tabindex="0">
-                <title>Sitemap</title>
-                <g class="hoverEffect" id="SITEMAP">
-                    <rect x="880" y="460" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="920" y="520" class="boxText">SITEMAP</text>
-                    <image href="images/SITEMAP.png" x="895" y="465" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="content_ST1.html" tabindex="0">
-                <title>Content Student 1</title>
-                <g class="hoverEffect" id="PAGE1">
-                    <rect x="190" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="230" y="740" class="boxText">STUDENT 1</text>
-                    <image href="images/CONTENT_PAGE.png" x="205" y="685" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="content_ST2.html" tabindex="0">
-                <title>Content Student 2</title>
-                <g class="hoverEffect" id="PAGE2">
-                    <rect x="370" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="410" y="740" class="boxText">STUDENT 2</text>
-                    <image href="images/CONTENT_PAGE.png" x="385" y="685" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="content_ST3.html" tabindex="0">
-                <title>Content Student 3</title>
-                <g class="hoverEffect" id="PAGE3">
-                    <rect x="550" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="590" y="740" class="boxText">STUDENT 3</text>
-                    <image href="images/CONTENT_PAGE.png" x="565" y="685" width="50" height="50" />
-                </g>
-            </a>
-
-            <a xlink:href="content_ST4.html" tabindex="0">
-                <title>Content Student 4</title>
-                <g class="hoverEffect" id="PAGE4">
-                    <rect x="730" y="680" rx="10" ry="10" width="80" height="80" class="nodeBox" />
-                    <text x="770" y="740" class="boxText">STUDENT 4</text>
-                    <image href="images/CONTENT_PAGE.png" x="745" y="685" width="50" height="50" />
-                </g>
-            </a>
-
-            <!--Paths-->
-            <g class="greypath">
-                <path d="M 460 160 L 430 160 C 380 160, 320 190, 320 220 L 320 260" /> <!--Home : ST1 validation-->
-                <path d="M 460 160 L 440 160 C 420 160, 420 190, 420 220 L 420 260" /> <!--Home : ST1 page editor-->
-                <path d="M 360 460 L 360 430 C 360 380, 320 380, 320 340" /> <!--Gallery : ST1 validation-->
-                <path d="M 360 460 L 360 430 C 360 380, 420 380, 420 340" /> <!--Gallery : ST1 page editor-->
-
-                <path d="M 540 50 L 560 50 C 580 50, 580 160, 580 220 L 580 260" /> <!--Splashscreen : ST2 validation-->
-                <path d="M 540 50 L 570 50 C 620 50, 680 160, 680 220 L 680 260" /> <!--Splashscreen : ST2 page editor-->
-                <path d="M 640 460 L 640 430 C 640 380, 580 380, 580 340" /> <!--AIS : ST2 validation-->
-                <path d="M 640 460 L 640 430 C 640 380, 680 380, 680 340" /> <!--AIS : ST2 page editor-->
-
-                <path d="M 80 460 l 0 -120" /> <!--Team : ST3 validation-->
-                <path d="M 80 460 L 80 430 C 80 380, 180 380, 180 340" /> <!--Team : ST3 page editor-->
-                <path d="M 220 460 L 220 430 C 220 380, 80 380, 80 340" /> <!--Feedback : ST3 validation-->
-                <path d="M 220 460 L 220 430 C 220 380, 180 380, 180 340" /> <!--Feedback : ST3 page editor-->
-
-                <path d="M 920 460 l 0 -120" /> <!--Sitemap : ST4 validation-->
-                <path d="M 920 460 L 920 430 C 920 380, 820 380, 820 340" /> <!--Sitemap : ST4 page editor-->
-                <path d="M 780 460 L 780 430 C 780 380, 920 380, 920 340" /> <!--User : ST4 validation-->
-                <path d="M 780 460 L 780 430 C 780 380, 820 380, 820 340" /> <!--User : ST4 page editor-->
-            </g>
-            
-            <g class="greenpath">
-                <path d="M 500 90 l 0 30" /> <!--Splash : Home-->
-
-                <path d="M 500 320 C 460 430, 80 400, 80 460" /> <!--Home : Team-->
-                <path d="M 500 320 C 480 425, 220 400, 220 460" /> <!--Home : Feedback-->
-                <path d="M 500 320 C 495 415, 360 400, 360 460" /> <!--Home : Gallery-->
-                <path d="M 500 200 l 0 340" /> <!--Home : Content-->
-                <path d="M 500 320 C 505 415, 640 400, 640 460" /> <!--Home : AIS-->
-                <path d="M 500 320 C 520 425, 780 400, 780 460" /> <!--Home : User Profile-->
-                <path d="M 500 320 C 540 430, 920 400, 920 460" /> <!--Home : Sitemap-->
-
-                <path d="M 500 540 C 500 610, 230 620, 230 680" /> <!--Content : Page 1-->
-                <path d="M 500 540 C 500 600, 410 620, 410 680" /> <!--Content : Page 2-->
-                <path d="M 500 540 C 500 600, 590 620, 590 680" /> <!--Content : Page 3-->
-                <path d="M 500 540 C 500 610, 770 620, 770 680" /> <!--Content : Page 4-->
-            </g>
-            
-        </svg>
-    </main>
-
-    <hr>
-
-    <footer>
-        <p><a href="#">page editor</a></p>
-        <p><a href="#">Validation</a></p>
-    </footer>
-</body>
+        <footer>
+            <p><a href="#">page editor</a></p>
+            <p><a href="#">Validation</a></p>
+        </footer>
+    </body>
 </html>

@@ -13,6 +13,11 @@
                 text-align: center;
                 color: #2C9452;
             }
+            h2 {
+                padding: 10px;
+                text-align: center;
+                color: #2C9452;
+            }
             h3 {
                 padding: 0 20px;
                 text-align: center;
@@ -21,7 +26,7 @@
             p {
                 padding: 0 20px 0 20px ;
             }
-            button {
+            main button {
                 background-color: #2C9452;
                 color: white;
                 height: 40px;
@@ -32,7 +37,7 @@
                 font-family: Poppins;
                 font-weight: 600;
             }
-            button:hover {
+            main button:hover {
                 cursor: pointer;
                 background-color: white;
                 color: #2C9452;
@@ -69,6 +74,7 @@
             }
         </style>
     </head>
+
     <body>
         <header>
            <nav>
@@ -158,16 +164,29 @@
             <section class="progress-container">
                 <section id="progress-bar">0.00%</section>
             </section>
+            <section>
+                <h2 id="status"></h2>
+            </section>
         </main>
 
-        <br>
         <hr>
+
+        <button id="backtotop"><a href="#top">Back to top</a></button>
+
         <footer>
             <p><a href="#">page editor</a></p>
             <p><a href="#">Validation</a></p>
         </footer>
         
         <script>
+            const nameRegex = /^[A-Za-z\s'-]{3,}$/ ;
+            const dateRegex = /^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/ ;
+            const usernameRegex = /^[A-Za-z0-9]{1,15}$/ ;
+            
+            const mobileRegex = /^(?:\+94|0)?7\d{8}$/ ;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
+            const addressRegex = /^(?=.*[A-Za-z0-9])[A-Za-z0-9\s,./#-]{5,100}$/ ;
+            
             let name ;
             let dob ;
             let username ;
@@ -191,31 +210,65 @@
                 contact() ;
                 interests() ;
                 goals() ;
+
+                if (progress == 12) {
+                    var messageBody = 
+                    `Name : ${name}
+                    D.O.B : ${dob}
+                    Username : ${username}
+                    
+                    Mobile Number : ${mobile}
+                    Email Address : ${email}
+                    Home Address : ${address}
+                    
+                    What aspects of clean and affordable energy interest you the most? : ${aspects}
+                    Have you participated in or followed any activities, projects, or initiatives related to renewable energy? If yes, describe them : ${activities}
+                    How do you currently practice or support energy conservation in your daily life? : ${practice}
+                    
+                    What specific changes would you like to see in your community or country regarding access to clean and affordable energy? : ${public_changes}
+                    Do you have any personal or group goals related to promoting renewable energy or reducing energy consumption? Please explain. : ${personal_goals}
+                    What measurable targets would you like to achieve within a set timeframe? (e.g. : reducing electricity usage, adopting solar energy, awareness campaigns) : ${measurable_targets}`
+
+                    var link = "mailto:damian.20250423@iit.ac.lk?subject=User Created&body=" + encodeURIComponent(messageBody) ;
+                    window.location.href = link ;
+                }
             }
 
             function personal() {
-                if (!name) {
+                while (!name) {
                     name = prompt("Full Name :") ;
-                    progress += 1 ;
-                    if (name == null || name == "") {
+                    if (name == null || name.trim() == "") {
                         name = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (nameRegex.test(name)){
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a valid name. Must be greater than 3 characters.") ;
+                        name = null ;
                     }
                 }
-                if (!dob) {
+                while (!dob) {
                     dob = prompt("Date of Birth (DD.MM.YYYY) :") ;
-                    progress += 1 ;
-                    if (dob == null || dob == "") {
+                    if (dob == null || dob.trim() == "") {
                         dob = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (dateRegex.test(dob)) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a valid date of birth. (DD.MM.YYYY)") ;
+                        dob = null ;
                     }
                 }
-                if (!username) {
+                while (!username) {
                     username = prompt("Username :") ;
-                    progress += 1 ;
-                    if (username == null || username == "") {
+                    if (username == null || username.trim() == "") {
                         username = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (usernameRegex.test(username)) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a valid username. Must be less than 15 characters and may only contain letters and numbers.") ;
+                        username = null ;
                     }
                 }
 
@@ -259,28 +312,40 @@
             }
 
             function contact() {
-                if (!mobile) {
+                while (!mobile) {
                     mobile = prompt("Mobile Number :") ;
-                    progress += 1 ;
-                    if (mobile == null || mobile == "") {
+                    if (mobile == null || mobile.trim() == "") {
                         mobile = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (mobileRegex.test(mobile)) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a valid mobile number. (+94777123456 / 0777123456)") ;
+                        mobile = null ;
                     }
                 }
-                if (!email) {
+                while (!email) {
                     email = prompt("Email Address :") ;
-                    progress += 1 ;
-                    if (email == null || email == "") {
+                    if (email == null || email.trim() == "") {
                         email = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (emailRegex.test(email)) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a valid email address.") ;
+                        email = null ;
                     }
                 }
-                if (!address) {
+                while (!address) {
                     address = prompt("Home Address :")
-                    progress += 1 ;
-                    if (address == null || address == "") {
+                    if (address == null || address.trim() == "") {
                         address = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (addressRegex.test(address)) {
+                        progress += 1 ;
+                    } else {
+                       alert("Please enter a valid address.") ;
+                       address = null ;
                     }
                 }
 
@@ -324,28 +389,40 @@
             }
 
             function interests() {
-                if (!aspects) {
+                while (!aspects) {
                     aspects = prompt("What aspects of clean and affordable energy interest you the most? (e.g. : solar power, wind energy, energy conservation, sustainable technology)") ;
-                    progress += 1 ;
-                    if (aspects == null || aspects == "") {
+                    if (aspects == null || aspects.trim() == "") {
                         aspects = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (aspects.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        aspects = null ;
                     }
                 }
-                if (!activities) {
+                while (!activities) {
                     activities = prompt("Have you participated in or followed any activities, projects, or initiatives related to renewable energy? If yes, describe them :") ;
-                    progress += 1 ;
-                    if (activities == null || activities == "") {
+                    if (activities == null || activities.trim() == "") {
                         activities = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (activities.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        activities = null ;
                     }
                 }
-                if (!practice) {
+                while (!practice) {
                     practice = prompt("How do you currently practice or support energy conservation in your daily life?") ;
-                    progress += 1 ;
-                    if (practice == null || practice == "") {
+                    if (practice == null || practice.trim() == "") {
                         practice = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (practice.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        practice = null ;
                     }
                 }
 
@@ -389,28 +466,40 @@
             }
 
             function goals() {
-                if (!public_changes) {
+                while (!public_changes) {
                     public_changes = prompt("What specific changes would you like to see in your community or country regarding access to clean and affordable energy?") ;
-                    progress += 1 ;
-                    if (public_changes == null || public_changes == "") {
+                    if (public_changes == null || public_changes.trim() == "") {
                         public_changes = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (public_changes.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        public_changes = null ;
                     }
                 }
-                if (!personal_goals) {
+                while (!personal_goals) {
                     personal_goals = prompt("Do you have any personal or group goals related to promoting renewable energy or reducing energy consumption? Please explain.") ;
-                    progress += 1 ;
-                    if (personal_goals == null || personal_goals == "") {
+                    if (personal_goals == null || personal_goals.trim() == "") {
                         personal_goals = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (personal_goals.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        personal_goals = null ;
                     }
                 }
-                if (!measurable_targets) {
+                while (!measurable_targets) {
                     measurable_targets = prompt("What measurable targets would you like to achieve within a set timeframe? (e.g. : reducing electricity usage, adopting solar energy, awareness campaigns)") ;
-                    progress += 1 ;
-                    if (measurable_targets == null || measurable_targets == "") {
+                    if (measurable_targets == null || measurable_targets.trim() == "") {
                         measurable_targets = "" ;
-                        progress -= 1 ;
+                        break ;
+                    } else if (measurable_targets.length > 3) {
+                        progress += 1 ;
+                    } else {
+                        alert("Please enter a more detailed description.") ;
+                        measurable_targets = null ;
                     }
                 }
 
@@ -457,11 +546,18 @@
                 let percentage = (progress / 12) * 100 ;
                 document.getElementById("progress-bar").style.width = percentage.toFixed(2) + "%" ;
                 document.getElementById("progress-bar").innerText = percentage.toFixed(2) + "%" ;
-                
-                if (name || dob || username || mobile || email || address || aspects || activities || practice || public_changes || personal_goals || measurable_targets) {
+
+                if (progress != 0) {
                     document.getElementById("user_button").textContent = "CONTINUE" ;
                 } else {
                     document.getElementById("user_button").textContent = "CREATE" ;
+                }
+
+                if (percentage == 100) {
+                    document.getElementById("status").textContent = "PROFILE COMPLETE" ;
+                    document.getElementById("user_button").textContent = "SUBMIT" ;
+                } else {
+                    document.getElementById("status").textContent = "" ;
                 }
             }
         </script>
