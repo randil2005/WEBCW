@@ -15,6 +15,7 @@ body {
 main {
     flex: 3;
 }
+
 aside {
     flex: 1;
     background-color: #f4f4f4;
@@ -31,12 +32,6 @@ section {
     padding: 15px;
     border: 1px solid #ddd;
     background-color: #fafafa;
-}
-header, footer {
-    text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
 }
 
 .ref li{
@@ -81,7 +76,7 @@ aside li{
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
 }
 
-img{
+main img{
     width: 90%;
 }
 

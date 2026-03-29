@@ -7,12 +7,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <title>GoGreen</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <style>
             h1{
                 text-align:center;
                 color:#2e7d32;
             }
+            
+            h1:hover{
+                background-color:whitesmoke;
+            }
+            
             
             .gallery-head {
                 background-image: url(../../images/gallery/pexels-artempodrez-7048040.jpg);
@@ -41,7 +46,7 @@
             .gallery-grid {
                 display: grid;
                 grid-template-columns: repeat(3,1fr);
-                gap:15px;
+                gap:25px;
                 width:100%;
             }
 
@@ -51,13 +56,13 @@
                 overflow: hidden;
                 border-radius: 10px;
                 cursor: pointer;
-                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+                box-shadow:0 4px 15px rgba(0, 0, 0, 0.3);
             }
 
             .cell img {
                 display: block;
                 width: 100%;
-                height: 200px;
+                height: 350px;
                 aspect-ratio: 1 / 1;
                 object-fit: cover;
                 transition: transform 1.3s ease;
@@ -88,6 +93,10 @@
                 z-index: 2;
                 /* ensure it sits above the image */
 
+            }
+
+            p{
+                color:rgb(92, 171, 22);
             }
 
             /* Modal content */
@@ -192,7 +201,7 @@
                     <div class="navbar">
                         <ul>
                             <li><a href="home.html">Home</a></li>
-                            <li><a href="content.html">Content</a></li>
+                            <li><a href="content_ST1.html">Content</a></li>
                             <li><a href="ais.html">Simulator</a></li>
                             <li><a href="gallery.html" class="active">Gallery</a></li>
                             <li><a href="feedback.html">Feedback</a></li>
@@ -440,8 +449,19 @@
     <hr>
     
     <footer>
-            <p><a href="#">page editor</a></p>
-            <p><a href="#">Validation</a></p>
+        <div>
+            <p class="footerheading">Page Author</p>
+            <p>Randil Shehan</p>
+            <p>20250428</p>
+            <p>Student 1 (Home Page & Gallery)</p>
+        </div>
+
+        <div>
+            <p class="footerheading">Developer Links</p>
+            <p><a href="pageEditor_ST1.html">Page Editor</a></p>
+            <p><a href="validation_ST1.html">Validation</a></p>
+            <p><a href="pageEditor_ST1.html#compliance">Accessibility and Compliance</a></p>
+        </div>
     </footer>
 
     </body>

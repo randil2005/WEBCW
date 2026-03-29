@@ -7,16 +7,19 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
         <title>GoGreen</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="css/styles.css">
         <style>
+            .layout{
+                display: flex;
+            }
             .sidebar{
-                width: 250px;
+                width: 30%;
                 height: auto;
                 background: #e8f5e9;
-                padding: 20px;
-                height: 100vh;
+                padding: 10px;
                 position: sticky;
                 top: 0;
+                font-size: 15px;
             }
             .sidebar h3{
                 margin: 10px auto;
@@ -35,6 +38,11 @@
             }
             .currentTopic{
                 font-weight: bold;
+            }
+            .content {
+                padding: 20px;
+                width: 70%;
+                flex-direction: column;
             }
             button {
                 position: fixed;
@@ -63,7 +71,7 @@
                     <div class="navbar">
                         <ul>
                             <li><a href="home.html">Home</a></li>
-                            <li><a href="content.html" class="active">Content</a></li>
+                            <li><a href="content_ST1.html" class="active">Content</a></li>
                             <li><a href="ais.html">Simulator</a></li>
                             <li><a href="gallery.html">Gallery</a></li>
                             <li><a href="feedback.html">Feedback</a></li>
@@ -124,8 +132,19 @@
         <hr>
         <button><a href="#top">Go to top</a></button>
         <footer>
-            <p><a href="#">page editor</a></p>
-            <p><a href="#">Validation</a></p>
+            <div>
+                <p class="footerheading">Page Author</p>
+                <p>Damian De Cruz</p>
+                <p>20250423</p>
+                <p>Student 4 (User Profile & Sitemap)</p>
+            </div>
+
+            <div>
+                <p class="footerheading">Developer Links</p>
+                <p><a href="pageEditor_ST4.html">Page Editor</a></p>
+                <p><a href="validation_ST4.html">Validation</a></p>
+                <p><a href="pageEditor_ST4.html#compliance">Accessibility and Compliance</a></p>
+            </div>
         </footer>
     </body>
 </html>
