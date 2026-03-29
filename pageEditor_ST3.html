@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page Editor Student - Thivina Abhishek Pathinayaka</title>
 
-    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->4
+    <link rel="stylesheet" href="css/pageEditor_validator.css"> <!-- External CSS link -->
     <link rel="stylesheet" href="styles.css"> <!-- External CSS link -->
 
 </head>
@@ -51,10 +51,16 @@
             <section>
                 <h2 id="team">Team page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <p>The Team page was developed using a structured HTML layout with clearly organised content to present team member profiles in a visually consistent format. Semantic elements such as header, nav, main, and footer were used to divide the page into meaningful sections, improving both readability and maintainability. Each team member is represented using a reusable div container with the class .student, which includes an image, name, ID, and interactive elements. Headings (h3) were used to display names, while p elements provide additional information such as roles and contact details. CSS was used to create a modern card-based layout and enhance user interaction. Flexbox (display: flex) was applied to the .team container to align all student cards horizontally and distribute space evenly. Each card uses position: relative to allow layering of elements such as overlays and additional details. Images are styled using object-fit: cover and border-radius to maintain consistent proportions and a polished appearance. Hover effects were implemented using transform: scale() and transition to provide visual feedback when users interact with the cards.</p>
+                        <p>An overlay effect was created using the ::after pseudo-element, adding a semi-transparent dark layer over each card to improve text visibility. Additional information is hidden initially using transform: translateY(100%) and revealed dynamically when a class is applied. This sliding panel effect enhances interactivity and keeps the interface clean.</p>
+                        <p>JavaScript was used to implement dynamic functionality. Event listeners were attached to “More Details” buttons, allowing users to toggle the visibility of additional information by adding or removing a CSS class. Another event listener detects clicks outside the card to automatically close the details panel. Pointer events were temporarily disabled on social media icons when the details panel is open, preventing unintended interactions. These features improve usability by providing controlled and interactive content display.</p> 
                     
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <p>Accessibility was considered to ensure the Team page can be used by a wide range of users. Semantic HTML elements such as header, nav, and main provide a clear structure, enabling screen readers to interpret the layout effectively. Headings are used appropriately to present names, helping users understand the content hierarchy.</p>
+                        <p>All images include descriptive alt attributes, allowing users who rely on screen readers to understand the visual content. Links for social media and email are implemented using standard a elements, ensuring they are keyboard accessible and function correctly with assistive technologies.</p>
+                        <p>Interactive elements such as buttons are implemented using button tags, making them accessible via keyboard navigation and ensuring proper focus behaviour. The use of consistent layout and spacing improves readability for all users. Additionally, hover and visual effects enhance usability without interfering with core functionality.</p>
+                        <p>However, further improvements could be made to enhance accessibility. For example, adding aria-expanded attributes to the toggle buttons would help screen readers understand when additional content is visible. Providing more descriptive labels for social media icons and ensuring sufficient colour contrast would also improve usability for users with visual impairments.</p>
+                        <p>Overall, the page combines semantic structure, interactive elements, and visual design to create an engaging and accessible user experience.</p>
                     
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
@@ -66,10 +72,16 @@
             <section>
                 <h2 id="feedback">Feedback Page</h2>
                     <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                        <p>The webpage was developed using a well-structured HTML layout with clearly organised sections, including navigation, program listings, reviews, and a feedback form. Semantic elements such as header, nav, main, and section were used to define different parts of the page, ensuring a logical and meaningful content structure. Headings (h1–h4) were applied to establish a clear hierarchy, making the content easier to read and understand. Lists (ul and li) were used within the navigation bar and program cards to organise links and actions efficiently.</p>
+                        <p>CSS was used extensively to enhance the visual design and layout of the page. Flexbox (display: flex) was applied to align and distribute elements such as program cards and review sections, allowing for a responsive and flexible layout. Card components were styled using properties like border-radius, margin, and padding to create a clean and modern interface. Images were styled using object-fit: cover and object-position: center to ensure they scale correctly without distortion. Additionally, hover effects using transform: scale() and transition were implemented to provide interactive feedback when users engage with program cards.</p>
+                        <p>The page also includes form styling to improve usability. Input elements (input, textarea, and select) were designed with consistent widths, padding, and rounded borders to maintain visual consistency. A scrollable container was created using max-height and overflow-y: auto, allowing users to browse program content without extending the page length excessively.</p>
+                        <p>JavaScript was used to add dynamic functionality to the page. A character counter updates in real time using an input event listener, providing feedback on the remaining number of characters in the message field. Form validation was implemented using an event listener on form submission, ensuring required fields such as name and email are correctly filled before submission. Error and success messages are displayed dynamically, improving user interaction and preventing invalid data entry.</p> 
 
                     <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                        <p>Accessibility was considered throughout the design to ensure the page is usable by a wide range of users, including those using assistive technologies. Semantic HTML elements such as header, nav, main, and section were used to create a meaningful structure, allowing screen readers to interpret and navigate the content effectively.</p>
+                        <p>All images include descriptive alt attributes, ensuring that users who cannot see the images can still understand their purpose. Form inputs are clearly associated with label elements using the for attribute, improving usability for screen readers and enabling users to click on labels to focus input fields. The use of fieldset and legend further enhances accessibility by grouping related form controls and providing context.</p>
+                        <p>The design maintains a clear visual hierarchy through the use of headings and consistent spacing, making content easier to follow. Interactive elements such as buttons and links are implemented using standard HTML elements, ensuring they are keyboard accessible. Additionally, validation messages provide immediate feedback, helping users understand and correct errors efficiently.</p>
+                        <p>The page also includes responsive design features through the viewport meta tag, ensuring it adapts to different screen sizes and devices. Overall, the combination of semantic structure, labelled inputs, alternative text, and user feedback mechanisms contributes to a more inclusive and accessible user experience.</p>
 
                     <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
                         <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
@@ -215,30 +227,11 @@
         <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
                 <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-                <li>Student 1</li>
-                <ul>
-                        <li><a href="#home">Home page </a></li>
-                        <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#content">Content</a></li>
-                    </ul>
-                <li>Student 2</li>
-                <ul> 
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
-                </ul>
-                    
                 <li>Student 3</li>
                     <ul>
                         <li><a href="#feedback">Feedback</a> </li>
                         <li><a href="#team">Team</a></li>
                         <li><a href="#content">Content</a></li>
-                    </ul>
-                <li>Student 4</li>
-                    <ul>
-                        <li><a href="#">User Profile </a></li>
-                        <li><a href="#">Sitemap</a></li>
-                        <li><a href="#">Content</a></li>
                     </ul>
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
